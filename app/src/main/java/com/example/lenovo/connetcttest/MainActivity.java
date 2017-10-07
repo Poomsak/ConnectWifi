@@ -62,10 +62,7 @@ public class MainActivity extends AppCompatActivity {
         lv.setLayoutManager(gridLayoutManager);
         lv.setAdapter(adapterWiFi);
         lv.setHasFixedSize(true);
-
-        /*final String networkSSID = "SoftCare";
-        final String networkPass = "88888888";*/
-
+        
         switchwifi = (Switch) findViewById(R.id.switchwifi);
         wifimanager = (WifiManager) getSystemService(Context.WIFI_SERVICE);
 
