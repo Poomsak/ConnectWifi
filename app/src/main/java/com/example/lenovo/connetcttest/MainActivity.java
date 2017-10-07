@@ -71,11 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         wifi = (WifiManager) getSystemService(Context.WIFI_SERVICE);
-        /*if (wifi.isWifiEnabled() == false)
-        {
-            Toast.makeText(getApplicationContext(), "wifi is disabled..making it enabled", Toast.LENGTH_LONG).show();
-            wifi.setWifiEnabled(true);
-        }*/
+
         if (wifi.isWifiEnabled()==false){
             switchwifi.setChecked(false);
             tvstatus.setText("WiFi OFF");
@@ -83,10 +79,6 @@ public class MainActivity extends AppCompatActivity {
             switchwifi.setChecked(true);
             tvstatus.setText("WiFi ON");
         }
-        /*this.adapter = new SimpleAdapter(MainActivity.this, arraylist,
-                R.layout.row, new String[] { ITEM_KEY },
-                new int[]
-                { R.id.list_value });*/
 
         adapterWiFi.SetOnItemClickListener(new AdapterWiFi.OnClickWiFi() {
             @Override
@@ -159,16 +151,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Scan();
-                /*WifiConfiguration wifiConfig = new WifiConfiguration();
-                wifiConfig.SSID = String.format("\"%s\"", networkSSID);
-                wifiConfig.preSharedKey = String.format("\"%s\"", networkPass);
-
-                WifiManager wifiManager = (WifiManager)getSystemService(WIFI_SERVICE);
-
-                int netId = wifiManager.addNetwork(wifiConfig);
-                wifiManager.disconnect();
-                wifiManager.enableNetwork(netId, true);
-                wifiManager.reconnect();*/
 
             }
         });
@@ -185,9 +167,6 @@ public class MainActivity extends AppCompatActivity {
             size = size - 1;
             while (size >= 0)
             {
-                /*HashMap<String, String> item = new HashMap<String, String>();
-                item.put(ITEM_KEY, results.get(size).SSID);*/// + "  " + results.get(size).capabilities
-
                 Modelvalue modelvalue = new Modelvalue();
                 modelvalue.setName(results.get(size).SSID);
                 modelvalue.setWPA(results.get(size).capabilities);
